@@ -13,3 +13,9 @@ It is needed to use this extension.
 * Insert the "License" plugin on a page
 * Include the TypoScript in your root page (sys_template, no Site Set Yet). Note that `storagePid` is currently bypassed through `setRespectStoragePage(false)` for simplicity.
 * View the page with the plugin, check out the List/New/Edit actions
+
+# TODO
+
+* The `localize` domain model getter method is not great, Bob. Any other way for convenience?
+* Add retrieving ENUMs for `<f:form.countrySelect>` values
+* Add Validator, utilizing ENUMs too
