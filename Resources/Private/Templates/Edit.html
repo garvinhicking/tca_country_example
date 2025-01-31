@@ -6,6 +6,21 @@
         <f:flashMessages />
     </div>
 
-    Edit
+    <h4>Edit {license.title}</h4>
 
+    <f:form method="post" name="license" action="update" object="{license}">
+        <p>Title: <f:form.textfield property="title" /></p>
+        <p>Price: <f:form.textfield property="price" /></p>
+        <f:comment>empty prependoptionLabel/Value allows an optionally empty country</f:comment>
+        <p>Country: <f:form.countrySelect
+                property="country"
+                value="{license.country.alpha2IsoCode}"
+                prependOptionLabel=""
+                prependOptionValue=""
+        /></p>
+
+        <f:form.submit value="Save" />
+    </f:form>
+
+    <p><f:link.action action="list">Back to overview</f:link.action></p>
 </html>

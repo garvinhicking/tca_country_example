@@ -1,0 +1,28 @@
+<html
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+        data-namespace-typo3-fluid="true">
+
+    <div id="form-feedback">
+        <f:flashMessages />
+    </div>
+
+    <h4>{license.title}</h4>
+
+    <p>Price: {license.price}!</p>
+
+    <f:if condition="{license.country}">
+        <p>Country (localized on getter): <strong>{license.localizedCountry}</strong></p>
+        <p>Country (specific access: alpha2): <strong>{license.country.alpha2IsoCode}</strong></p>
+        <p>Country (specific access: alpha3): <strong>{license.country.alpha3IsoCode}</strong></p>
+        <p>Country (specific access: localizedNameLabel): <strong>{license.country.localizedNameLabel}</strong></p>
+        <p>Country (specific access: officialName): <strong>{license.country.officialName}</strong></p>
+        <p>Country (specific access: numericRepresentation): <strong>{license.country.numericRepresentation}</strong></p>
+        <p>Country (specific access: flag): <strong>{license.country.flag}</strong></p>
+        <p>Country (toString): {license.country}</p>
+
+        <p>Translated Country, official name: <f:translate key="{license.country.localizedOfficialNameLabel}" /></p>
+    </f:if>
+
+    <p><f:link.action action="edit" arguments="{license: license}">Edit</f:link.action></p>
+    <p><f:link.action action="list">Back to overview</f:link.action></p>
+</html>

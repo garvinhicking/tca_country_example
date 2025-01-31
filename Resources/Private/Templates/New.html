@@ -2,11 +2,24 @@
         xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
         data-namespace-typo3-fluid="true">
 
-<div id="form-feedback">
-    <f:flashMessages />
-</div>
+    <div id="form-feedback">
+        <f:flashMessages />
+    </div>
 
-New
+    <h4>New</h4>
 
+    <f:form method="post" name="license" action="create" object="{license}">
+        <p>Title: <f:form.textfield property="title" /></p>
+        <p>Price: <f:form.textfield property="price" /></p>
+        <f:comment>empty prependoptionLabel/Value allows an optionally empty country</f:comment>
+        <p>Country: <f:form.countrySelect
+                property="country"
+                prependOptionLabel=""
+                prependOptionValue=""
+        /></p>
 
+        <f:form.submit value="Create" />
+    </f:form>
+
+    <p><f:link.action action="list">Back to overview</f:link.action></p>
 </html>

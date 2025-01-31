@@ -11,9 +11,12 @@ ExtensionUtility::configurePlugin(
     'tca_country_example',
     'License',
     [
-        LicenseController::class => ['list', 'single', 'new', 'create', 'edit', 'update'],
+        LicenseController::class => ['list', 'show', 'new', 'create', 'edit', 'update'],
     ],
     [
-        LicenseController::class => ['new', 'create', 'edit', 'update'],
+        // Note: "list" and "show" could be cached, but would need custom cache invalidation on
+        // frontend updates, which is why we do not cache it for this example, so no stale data
+        // is shown.
+        LicenseController::class => ['list', 'show', 'new', 'create', 'edit', 'update'],
     ],
 );

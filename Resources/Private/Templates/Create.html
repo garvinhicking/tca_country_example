@@ -2,10 +2,13 @@
         xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
         data-namespace-typo3-fluid="true">
 
-<div id="form-feedback">
-    <f:flashMessages />
-</div>
+    <div id="form-feedback">
+        <f:flashMessages />
+    </div>
 
-Create
+    <h4>New object #{license.uid} created</h4>
 
+    <p><f:link.action action="show" arguments="{license: license}">Show</f:link.action></p>
+    <p><f:link.action action="edit" arguments="{license: license}">Edit</f:link.action></p>
+    <p><f:link.action action="list">Back to overview</f:link.action></p>
 </html>
