@@ -1,0 +1,19 @@
+{
+	"name": "garvinhicking/tca-country-example",
+	"type": "typo3-cms-extension",
+	"description": "Example to showcase TCA type=country in Extbase",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"typo3/cms-core": "14.0.*@dev"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "tca_country_example"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"GarvinHicking\\TcaCountryExample\\": "Classes/"
+		}
+	}
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:tca_country_example/Resources/Private/Language/locallang_db.xlf" date="2020-06-03T15:50:00Z" product-name="tca_country_example">
+		<header/>
+		<body>
+			<trans-unit id="tx_tcacountryexample_domain_model_license">
+				<source>License</source>
+			</trans-unit>
+			<trans-unit id="tx_tcacountryexample_domain_model_license.title">
+				<source>License name</source>
+			</trans-unit>
+			<trans-unit id="tx_tcacountryexample_domain_model_license.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_tcacountryexample_domain_model_license.country">
+				<source>Valid country</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
