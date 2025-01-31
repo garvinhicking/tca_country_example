@@ -44,7 +44,7 @@ final class LicenseController extends ActionController
     public function createAction(License $license): ResponseInterface
     {
         // Note: pid constraints ignored, here you would likely adjust the pid.
-        $license->setPid(1);
+        // $license->setPid($this->settings['newStoragePid']);
         $this->licenseRepository->add($license);
         $this->persistenceManager->persistAll();
         $this->view->assign('license', $license);
