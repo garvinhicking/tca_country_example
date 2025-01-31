@@ -18,8 +18,8 @@ final class LicenseController extends ActionController
 
     public function listAction(): ResponseInterface
     {
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($this->settings);
         $this->view->assign('licenses', $this->licenseRepository->findAll());
-
         return $this->htmlResponse();
     }
 

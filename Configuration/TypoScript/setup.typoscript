@@ -3,17 +3,13 @@ plugin.tx_tcacountryexample {
         templateRootPaths {
             10 = EXT:tca_country_example/Resources/Private/Templates/
         }
-
-        partialRootPaths {
-            10 = EXT:tca_country_example/Resources/Private/Partials/
-        }
-
-        layoutRootPaths {
-            10 = EXT:tca_country_example/Resources/Private/Layouts/
-        }
     }
 	persistence {
 	    # For example purposes locked to pid=0 (site root)
-		storagePid = 0
+		storagePid = 2
+		recursive = 99
+	}
+	settings {
+	    something = private
 	}
 }
