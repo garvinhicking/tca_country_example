@@ -15,10 +15,10 @@ class LicenseRepository extends Repository
 
     public function initializeObject(): void
     {
+        // This is just for simplicity of the example. In a real world extbase plugin
+        // you would use `setup.typoscript`
         $defaultQuerySettings = GeneralUtility::makeInstance(Typo3QuerySettings::class);
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($defaultQuerySettings);
-        #$defaultQuerySettings->setIgnoreEnableFields(false);
-        #$defaultQuerySettings->setRespectStoragePage(false);
-        #$this->setDefaultQuerySettings($defaultQuerySettings);
+        $defaultQuerySettings->setRespectStoragePage(false);
+        $this->setDefaultQuerySettings($defaultQuerySettings);
     }
 }

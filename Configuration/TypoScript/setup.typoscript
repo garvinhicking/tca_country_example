@@ -1,15 +1,5 @@
 plugin.tx_tcacountryexample {
-    view {
-        templateRootPaths {
-            10 = EXT:tca_country_example/Resources/Private/Templates/
-        }
-    }
 	persistence {
-	    # For example purposes locked to pid=0 (site root)
-		storagePid = 2
-		recursive = 99
-	}
-	settings {
-	    something = private
+	    # For example purposes, setRespectStoragePage() is set on Repository-level
 	}
 }
