@@ -4,6 +4,22 @@
 
     <div id="form-feedback">
         <f:flashMessages />
+
+        <f:form.validationResults>
+            <f:if condition="{validationResults.flattenedErrors}">
+                <ul class="errors">
+                    <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+                        <li>{propertyPath}
+                            <ul>
+                                <f:for each="{errors}" as="error">
+                                    <li>{error.code}: {error}</li>
+                                </f:for>
+                            </ul>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:if>
+        </f:form.validationResults>
     </div>
 
     <h4>Edit {license.title}</h4>
@@ -11,10 +27,14 @@
     <f:form method="post" name="license" action="update" object="{license}">
         <p>Title: <f:form.textfield property="title" /></p>
         <p>Price: <f:form.textfield property="price" /></p>
-        <f:comment>empty prependoptionLabel/Value allows an optionally empty country</f:comment>
+        <f:comment>empty prependOptionLabel/Value allows an optionally empty country</f:comment>
         <p>Country: <f:form.countrySelect
                 property="country"
                 value="{license.country.alpha2IsoCode}"
+
+                prioritizedCountries="{prioritizedCountries}"
+                onlyCountries="{onlyCountries}"
+
                 prependOptionLabel=""
                 prependOptionValue=""
         /></p>

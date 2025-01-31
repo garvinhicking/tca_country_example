@@ -17,5 +17,3 @@ It is needed to use this extension.
 # TODO
 
 * The `localize` domain model getter method is not great, Bob. Any other way for convenience?
-* Add retrieving ENUMs for `<f:form.countrySelect>` values
-* Add Validator, utilizing ENUMs too
