@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace GarvinHicking\TcaCountryExample\Domain\Model;
 
-use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Country\Country;
-use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
