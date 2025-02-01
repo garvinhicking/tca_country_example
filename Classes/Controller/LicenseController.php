@@ -25,6 +25,9 @@ final class LicenseController extends ActionController
     public function listAction(): ResponseInterface
     {
         $this->view->assign('licenses', $this->licenseRepository->findAll());
+        $this->view->assign('germanLicenses', $this->licenseRepository->findBy(['country' => 'DE']));
+        $this->view->assign('germanMarketLicenses', $this->licenseRepository->findByGermanMarkets());
+        $this->view->assign('licenses', $this->licenseRepository->findAll());
         return $this->htmlResponse();
     }
 
