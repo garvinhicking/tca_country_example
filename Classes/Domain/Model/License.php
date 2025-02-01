@@ -47,26 +47,15 @@ class License extends AbstractEntity
         $this->country = $country;
     }
 
-    // This is a helper method to access TYPO3_REQUEST to
-    // retrieve the current locale, so that no `<f:translate>`
-    // routing is required in fluid, but can be passed from the
-    // domain model already.
-    // Yes, this is a bit unfortunate currently, looking for alternate
-    // ideas.
-    public function localize($key): string
-    {
-        /** @var SiteLanguage $languageAttribute */
-        $languageAttribute = $GLOBALS['TYPO3_REQUEST']?->getAttribute('language');
-        $currentLanguageKey = $languageAttribute?->getLocale()?->getLanguageCode();
-
-        return (string) LocalizationUtility::translate((string) $key, null, null, $currentLanguageKey);
-    }
-
     // Special getter to easily access `{license.localizedCountry}` in Fluid
     public function getLocalizedCountry(): string
     {
         // This is a conscious coupling of the Frontend request context to
         // retrieve the Country API with localization in mind.
-        return $this->localize($this->getCountry()?->getLocalizedNameLabel());
+        // This is just for convenience so that in a Fluid template you can use
+        // {item.localizedCountry}
+        // instead needing to use
+        // <f:translate key="{item.country.localizedNameLabel}" />
+        return (string) LocalizationUtility::translate((string) $this->getCountry()?->getLocalizedNameLabel());
     }
 }
